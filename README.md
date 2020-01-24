@@ -7,4 +7,4 @@
 
 * Java
 * Desenvolvimento de estruturas do tipo árvore e tabela hash
-* Operações CRUD
+* Operações CRUD e join
