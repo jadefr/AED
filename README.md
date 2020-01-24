@@ -5,5 +5,6 @@
 
 # O que aprendi
 
+* Java
 * Desenvolvimento de estruturas do tipo árvore e tabela hash
 * Operações CRUD
