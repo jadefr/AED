@@ -1,19 +1,18 @@
 # AED
-Esta aplicação -- desenvolvida na disciplina Algoritmos e Estruturas de Dados do Mestrado (PPGCC - UFJF) -- conta com uma estrutura de dados do tipo árvore Patricia (Patricia tree ou Radix tree) para realizar operações no banco de dados USDA (United States Department of Agriculture). 
+Esta aplicação -- desenvolvida na disciplina Algoritmos e Estruturas de Dados do Mestrado (PPGCC - UFJF) -- conta com uma estrutura de dados do tipo **árvore Patricia** (Patricia tree ou Radix tree) para realizar operações no banco de dados USDA (United States Department of Agriculture). 
   
   * A estrutura, criada como um IMDB (In-Memory Database), permite:
     - a definição de campos e inserção de valores (i.e., inserção de chaves primárias)
     - busca
     - remoção
     - a instanciação de tabelas
+    - contar registros (como SELECT COUNT FROM e SELECT COUNT FROM WHERE)
+    - consultas JOIN (como INNER JOIN, LEFT OUTER JOIN, RIGHT OUTER JOIN e FULL OUTER JOIN) 
   
   * Este tipo de estrutura foi escolhido por ser útil no tratamento de chaves de tamanho variável, podendo estas serem extremamente longas, como títulos e frases.
     
-Em um segundo momento, buscando um aprimoramento da solução (e.g., operações mais rápidas e menos custosas em termo de espaço) a árvore Patricia foi transformada em uma tabela hash de árvores Patricia.
-  
-  * A nova estrutura permite (além da inserção, busca e remoção):
-    - contar registros (como SELECT COUNT FROM e SELECT COUNT FROM WHERE)
-    - consultas JOIN (i.e., INNER JOIN e OUTER JOIN) 
+  * Em um segundo momento, buscando um aprimoramento da solução (e.g., operações mais rápidas e menos custosas em termo de espaço) a árvore Patricia foi transformada em uma ***tabela hash de árvores Patricia***.
+ 
   
 ## Tech Stack
 * Java
@@ -81,6 +80,41 @@ A remoção de qualquer registro na árvore segue os seguintes passos:
     3. O irmão do registro passa a ser o pai
     
 Os passos acima descritos valem para se remover qualquer nó folha, não importando se este é filho esquerdo ou direito ou a altura em que este se encontra na árvore.
+
+### Contadores
+  * Fez-se um método para contar todos os registros de uma tabela, dado o nome da tabela. Este método considera apenas registros que foram indexados a partir de suas chaves primárias.
+  
+  * Dado o nome da tabela, o nome do campo e o valor que este deve apresentar, criou-se um método que retorna a quantidade de campos iguais presentes em uma tabela.
+  
+### Joins
+A cláusula JOIN combina campos de tabelas diferentes e os transforma em um novo conjunto.
+
+#### Inner Join
+Considere duas tabelas (assinaladas por 1 e 2), onde 1 é a tabela da esquerda e a 2 da direita.
+
+   - O INNER JOIN é feito percorrendo-se os registros da tabela 1 e procurando se as chaves correspondentes a tais registros se fazem presentes na tabela 1.
+   
+   - O percurso na primeira árvore apresenta complexidade _O(N)_.
+   
+   - A busca na segunda árvore, considerando o pior caso, também apresenta complexidade _O(N)_.
+   
+   - Portanto, podemos concluir que a complexidade do método INNER JOIN tende a _N<sup>2</sup>_.
+   
+#### Left Outer Join
+O LEFT JOIN, assim como o INNER JOIN, representa a interseção entre as tabelas 1 e 2 por um campo considerado chave primária.
+
+Entretanto, o LEFT JOIN não representa somente a interseção entre os conjuntos, mas também todos os outros camposda tabela 1 que não apresentam correspondência na tabela 2.
+
+#### Right Outer Join
+
+#### Full Outer Join
+
+### Tabela Hash de Árvores Patrícia 
+Com o objetivo de se obter buscas mais rápidas, propôs-se a implementação de uma modificação na estrutura original. 
+
+Tal modificação se dá pela implementação de uma tabela hash, cujo acesso, no melhor caso, é direto.
+
+A tabela é formada por um vetor de árvores Patrícia. Portanto, trata-se da abordagem de tabela hash com encadeamento externo.
 
 ## Referências
   1. https://www.ime.usp.br/pf/estruturas-de-dados/aulas/tries.html
