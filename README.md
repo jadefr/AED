@@ -101,20 +101,53 @@ Considere duas tabelas (assinaladas por 1 e 2), onde 1 é a tabela da esquerda e
    - Portanto, podemos concluir que a complexidade do método INNER JOIN tende a _N<sup>2</sup>_.
    
 #### Left Outer Join
-O LEFT JOIN, assim como o INNER JOIN, representa a interseção entre as tabelas 1 e 2 por um campo considerado chave primária.
+  * O LEFT JOIN, assim como o INNER JOIN, representa a interseção entre as tabelas 1 e 2 por um campo considerado chave primária.
 
-Entretanto, o LEFT JOIN não representa somente a interseção entre os conjuntos, mas também todos os outros camposda tabela 1 que não apresentam correspondência na tabela 2.
+  * Entretanto, o LEFT JOIN não representa somente a interseção entre os conjuntos, mas também todos os outros camposda tabela 1 que não apresentam correspondência na tabela 2.
 
 #### Right Outer Join
-
+  * O Right Join se parece com o Left Join, entretanto, considera-se campos não nulos na segunda
+tabela e se pode considerar campos nulos na primeira.
+  
+  * Logo é o contrário do Left Join, tendo seu conjunto resultante representado pelo conjunto da tabela 2.
+  
 #### Full Outer Join
+  * O Full Join pode ser visto como a uni~ao entre os Joins Left e Right, podendo ser representado
+pela união das tabelas 1 e 2.
 
 ### Tabela Hash de Árvores Patrícia 
-Com o objetivo de se obter buscas mais rápidas, propôs-se a implementação de uma modificação na estrutura original. 
+  * Com o objetivo de se obter buscas mais rápidas, propôs-se a implementação de uma modificação na estrutura original. 
 
-Tal modificação se dá pela implementação de uma tabela hash, cujo acesso, no melhor caso, é direto.
+  * Tal modificação se dá pela implementação de uma tabela hash, cujo acesso, no melhor caso, é direto.
 
-A tabela é formada por um vetor de árvores Patrícia. Portanto, trata-se da abordagem de tabela hash com encadeamento externo.
+  * A tabela é formada por um vetor de árvores Patrícia. Portanto, trata-se da abordagem de tabela hash com encadeamento externo.
+  
+  * Para uma tabela de tamanho *m*, cuja função de hash apresenta uma distribuição uniforme, o custo para acessa uma posição na tabela é *1/m*. Logo, *1/m* é o custo para se buscar uma árvore na tabela.
+  
+  * Considerando o pior caso da árvore, o custo para se buscar um registro na árvore é *O(N)*. Portanto, pode-se dizer que a complexidade de busca na tabela hash de árvores tende a *N/m*.
+  
+  * Para a implementação da estrutura, escolheu-se *m = 1051*. É valido notar que a escolha por um número primo é uma tentativa de se minimizar colisões.
+  
+ #### Representação Gráfica
+ * A valor de demonstração, o passo a passo seguinte elucida o processo de inserção de registros na estrutura, considerando um tamanho hipoético de m = 5.
+ 
+ * Considere ainda, hipoteticamente, que as chaves 0800, 0900, 1000 e 1100 quando aplicadas à função de hash apresentem os seguintes valores, respectivamente: 1, 4, 1, 1.
+ 
+| ![Image of insercao](https://raw.githubusercontent.com/jadefr/ontology-testing/master/tabela-hash1.png) | 
+|:--:| 
+| *Primeiro passo da inserção* |
+
+| ![Image of insercao](https://raw.githubusercontent.com/jadefr/ontology-testing/master/tabela-hash2.png) | 
+|:--:| 
+| *Segundo passo da inserção* |
+ 
+| ![Image of insercao](https://raw.githubusercontent.com/jadefr/ontology-testing/master/tabela-hash3.png) | 
+|:--:| 
+| *Terceiro passo da inserção* |
+
+| ![Image of insercao](https://raw.githubusercontent.com/jadefr/ontology-testing/master/tabela-hash4.png) | 
+|:--:| 
+| *Quarto passo da inserção* |
 
 ## Referências
   1. https://www.ime.usp.br/pf/estruturas-de-dados/aulas/tries.html
