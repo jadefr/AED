@@ -81,15 +81,15 @@ A remoção de qualquer registro na árvore segue os seguintes passos:
     
 Os passos acima descritos valem para se remover qualquer nó folha, não importando se este é filho esquerdo ou direito ou a altura em que este se encontra na árvore.
 
-### Contadores
+#### Contadores
   * Fez-se um método para contar todos os registros de uma tabela, dado o nome da tabela. Este método considera apenas registros que foram indexados a partir de suas chaves primárias.
   
   * Dado o nome da tabela, o nome do campo e o valor que este deve apresentar, criou-se um método que retorna a quantidade de campos iguais presentes em uma tabela.
   
-### Joins
+#### Joins
 A cláusula JOIN combina campos de tabelas diferentes e os transforma em um novo conjunto.
 
-#### Inner Join
+##### Inner Join
 Considere duas tabelas (assinaladas por 1 e 2), onde 1 é a tabela da esquerda e a 2 da direita.
 
    - O INNER JOIN é feito percorrendo-se os registros da tabela 1 e procurando se as chaves correspondentes a tais registros se fazem presentes na tabela 1.
@@ -100,18 +100,18 @@ Considere duas tabelas (assinaladas por 1 e 2), onde 1 é a tabela da esquerda e
    
    - Portanto, podemos concluir que a complexidade do método INNER JOIN tende a _N<sup>2</sup>_.
    
-#### Left Outer Join
+##### Left Outer Join
   * O LEFT JOIN, assim como o INNER JOIN, representa a interseção entre as tabelas 1 e 2 por um campo considerado chave primária.
 
   * Entretanto, o LEFT JOIN não representa somente a interseção entre os conjuntos, mas também todos os outros camposda tabela 1 que não apresentam correspondência na tabela 2.
 
-#### Right Outer Join
+##### Right Outer Join
   * O Right Join se parece com o Left Join, entretanto, considera-se campos não nulos na segunda
 tabela e se pode considerar campos nulos na primeira.
   
   * Logo é o contrário do Left Join, tendo seu conjunto resultante representado pelo conjunto da tabela 2.
   
-#### Full Outer Join
+##### Full Outer Join
   * O Full Join pode ser visto como a uni~ao entre os Joins Left e Right, podendo ser representado
 pela união das tabelas 1 e 2.
 
@@ -148,6 +148,21 @@ pela união das tabelas 1 e 2.
 | ![Image of insercao](https://raw.githubusercontent.com/jadefr/ontology-testing/master/tabela-hash4.png) | 
 |:--:| 
 | *Quarto passo da inserção* |
+
+#### Busca
+
+A figura abaixo apresenta uma comparação entre o tempo acumulado de busca por quantidade de registro considerando-se as duas estruturas.
+
+| ![Image of busca](https://raw.githubusercontent.com/jadefr/ontology-testing/master/busca.png) | 
+|:--:| 
+| *Busca de todos os registros da tabela nut_data* |
+
+Percebe-se que a curva referente à estrutura modificada (tabela hash de árvores) cresce mais lentamente que a apresentada pela árvore Patricia. Logo, há um decréscimo no tempo de busca.
+
+#### Demais operações
+
+As demais operações apresentaram comportamento semelhante à busca.
+
 
 ## Referências
   1. https://www.ime.usp.br/pf/estruturas-de-dados/aulas/tries.html
