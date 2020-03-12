@@ -37,13 +37,13 @@ Faz-se a separação entre nós pais e nós folhas, onde os nós pais são repre
 
 O processo de inserção começa pela raiz. Caso esta seja um registro:
 
-  **1.** Compara-se a chave correspondente a este registro com a chave do registro que se queira inserir.
+    1. Compara-se a chave correspondente a este registro com a chave do registro que se queira inserir.
  
-  **2.** Cria-se um novo nó com a primeira posição na qual as Strings divergem e com o caractere presente nesta posição no nó raiz. Este novo nó passa a ser a raiz da árvore
+    2. Cria-se um novo nó com a primeira posição na qual as Strings divergem e com o caractere presente nesta posição no nó raiz. Este novo nó passa a ser a raiz da árvore
   
-  **3.** Dentre os dois registros (o que se quer inserir e a raiz), o que possuir o caractere especificado pelo nó raiz, na posição especificada por este, passa a ser o filho esquerdo, enquanto que o outro passa a ser o filho direito.
+    3. Dentre os dois registros (o que se quer inserir e a raiz), o que possuir o caractere especificado pelo nó raiz, na posição especificada por este, passa a ser o filho esquerdo, enquanto que o outro passa a ser o filho direito.
   
-  **4.** Repete-se recursivamente, resultando em uma árvore binária onde todos os nós têm dois filhos.
+    4. Repete-se recursivamente, resultando em uma árvore binária onde todos os nós têm dois filhos.
 
 ##### Complexidade
 Pela literatura, sabe-se que o número médio de comparações a serem feitas nessa árvore é *log(N)*, onde *N* é o número de registros. 
