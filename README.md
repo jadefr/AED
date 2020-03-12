@@ -5,7 +5,7 @@ Esta aplicação -- desenvolvida na disciplina Algoritmos e Estruturas de Dados 
     - a definição de campos e inserção de valores (i.e., inserção de chaves primárias)
     - a instanciação de tabelas
     
-  * Em um segundo momento, buscando um aprimoramento da solução (e.g., operações mais rápidas e menos custosas em termo de espaço) a árvore Patricia foi transformada em uma tabela hash de árvores Patricia.
+Em um segundo momento, buscando um aprimoramento da solução (e.g., operações mais rápidas e menos custosas em termo de espaço) a árvore Patricia foi transformada em uma tabela hash de árvores Patricia.
   
   * A nova estrutura permite (além da inserção e busca):
     - remoção
