@@ -128,7 +128,7 @@ pela união das tabelas 1 e 2.
   
   * Para a implementação da estrutura, escolheu-se *m = 1051*. É valido notar que a escolha por um número primo é uma tentativa de se minimizar colisões.
   
- #### Representação Gráfica
+#### Representação Gráfica
  * A valor de demonstração, o passo a passo seguinte elucida o processo de inserção de registros na estrutura, considerando um tamanho hipoético de m = 5.
  
  * Considere ainda, hipoteticamente, que as chaves 0800, 0900, 1000 e 1100 quando aplicadas à função de hash apresentem os seguintes valores, respectivamente: 1, 4, 1, 1.
