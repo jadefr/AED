@@ -44,6 +44,12 @@ O processo de inserção começa pela raiz. Caso esta seja um registro:
     3. Dentre os dois registros (o que se quer inserir e a raiz), o que possuir o caractere especificado pelo nó raiz, na posição especificada por este, passa a ser o filho esquerdo, enquanto que o outro passa a ser o filho direito.
   
     4. Repete-se recursivamente, resultando em uma árvore binária onde todos os nós têm dois filhos.
+    
+A figura a seguir traz uma representação da árvore Patrícia.
+
+| ![Image of patricia](https://raw.githubusercontent.com/jadefr/ontology-testing/master/patricia.png) | 
+|:--:| 
+| *Representação da árvore Patricia com as chaves 0800, 0900, 1000 e 1100 armazenadas* |
 
 ##### Complexidade
 Pela literatura, sabe-se que o número médio de comparações a serem feitas nessa árvore é *log(N)*, onde *N* é o número de registros. 
@@ -57,16 +63,24 @@ Porém como os registros se apresentam (no arquivo de dump) ordenados alfabetica
 #### Busca
 Baseia-se na comparação da chave que se quer buscar com a raiz da árvore.
 
-  **1.** Considerando que a árvore possua mais que um registro, e, portanto, a raiz não é um registro, compara-se o caractere presente na raiz com com o caractere presente na chave na posição indicada pela raiz.
+    1. Considerando que a árvore possua mais que um registro, e, portanto, a raiz não é um registro, compara-se o caractere presente na raiz com com o caractere presente na chave na posição indicada pela raiz.
   
-  **2.** Caso a comparação seja positiva, segue-se para a esquerda e repete-se o procedimento.
+    2. Caso a comparação seja positiva, segue-se para a esquerda e repete-se o procedimento.
   
-  **3.** Caso contrário, segue-se para a direita recursivamente.
+    3. Caso contrário, segue-se para a direita recursivamente.
 
-  **4.** A recursão pára ao se atingir o nó folha correspondete à chave procurada.
+    4. A recursão pára ao se atingir o nó folha correspondete à chave procurada.
   
-  **5.** Caso não a ache, o retorno é nulo.
-
+    5. Caso não a ache, o retorno é nulo.
+    
+#### Remoção
+A remoção de qualquer registro na árvore segue os seguintes passos:
+  
+    1. Remove-se o registro
+    2. Remove-se o pai do registro
+    3. O irmão do registro passa a ser o pai
+    
+Os passos acima descritos valem para se remover qualquer nó folha, não importando se este é filho esquerdo ou direito ou a altura em que este se encontra na árvore.
 
 ## Referências
   1. https://www.ime.usp.br/pf/estruturas-de-dados/aulas/tries.html
