@@ -18,7 +18,7 @@ Esta aplicação -- desenvolvida na disciplina Algoritmos e Estruturas de Dados 
 * Java
 
 ## Desenvolvimento
-Tries, também conhecidas como árvores digitais ou árvores de prefixos, são tipos de árvores de busca utilizadas para implementar tabelas de símbolos cujas chaves são strings<sup>1</sup>. 
+Tries, também conhecidas como árvores digitais ou árvores de prefixos, são tipos de árvores de busca utilizadas para implementar tabelas de símbolos cujas chaves são strings[1]. 
 
 Em uma trie, por ser uma árvore n-ária, uma chave é recursivamente comparada a um nó da árvore até chegar ao nó procurado ou não o encontrar.
 
