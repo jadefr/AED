@@ -34,9 +34,9 @@ Faz-se a separação entre nós pais e nós folhas, onde os nós pais são repre
 #### Inserção
 É feita comparando-se alfanumericamente as Strings correspondentes às chaves primárias, que são armazenadas sempre como nós folhas. 
 
-O processo de inserção começa pela raiz. Caso esta seja um registro:
+O processo de inserção começa pela raiz e segue-se segundo descrito abaixo:
 
-    1. Compara-se a chave correspondente a este registro com a chave do registro que se queira inserir.
+    1. Caso a raiz seja um registro, compara-se a chave correspondente a este registro com a chave do registro que se queira inserir.
  
     2. Cria-se um novo nó com a primeira posição na qual as Strings divergem e com o caractere presente nesta posição no nó raiz. Este novo nó passa a ser a raiz da árvore
   
