@@ -22,7 +22,7 @@ Tries, também conhecidas como árvores digitais ou árvores de prefixos, são t
 
 Em uma trie, por ser uma árvore n-ária, uma chave é recursivamente comparada a um nó da árvore até chegar ao nó procurado ou não o encontrar.
 
-### Árvore Patrícia 
+### Árvore Patricia 
 A árvore Patricia (Practical Algorithm to Retrieve Information Coded in Alphanumeric) deriva da estrutura trie, porém diferencia-se desta no aspecto de que os nós que possuem apenas um filho são agrupados -- o que reduz o gasto de memória. 
 
 Faz-se a separação entre nós pais e nós folhas, onde os nós pais são representados por instâncias da classe Node (figura abaixo) cujos atributos *data* e *key* são nulos, enquanto que nas folhas, os atributos nulos são o *index* e o *character*.
