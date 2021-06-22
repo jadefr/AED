@@ -122,7 +122,7 @@ pela união das tabelas 1 e 2.
 
   * A tabela é formada por um vetor de árvores Patrícia. Portanto, trata-se da abordagem de tabela hash com encadeamento externo.
   
-  * Para uma tabela de tamanho *m*, cuja função de hash apresenta uma distribuição uniforme, o custo para acessa uma posição na tabela é *1/m*. Logo, *1/m* é o custo para se buscar uma árvore na tabela.
+  * Para uma tabela de tamanho *m*, cuja função de hash apresenta uma distribuição uniforme, o custo para acessar uma posição na tabela é *1/m*. Logo, *1/m* é o custo para se buscar uma árvore na tabela.
   
   * Considerando o pior caso da árvore, o custo para se buscar um registro na árvore é *O(N)*. Portanto, pode-se dizer que a complexidade de busca na tabela hash de árvores tende a *N/m*.
   
