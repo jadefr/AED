@@ -53,7 +53,7 @@ A figura a seguir traz uma representação da árvore Patrícia.
 ##### Complexidade
 Pela literatura, sabe-se que o número médio de comparações a serem feitas nessa árvore é *log(N)*, onde *N* é o número de registros. 
 
-Porém como os registros se apresentam (no arquivo de dump) ordenados alfabeticamente, espera-se que as operações realizadas na árvore tendam ao pior caso, que seria da ordem *N* (como se pode ver expresso no gráfico abaixo).
+Porém como os registros se apresentam (no arquivo de dump) ordenados alfabeticamente, espera-se que as operações realizadas na árvore tendam ao pior caso, que seria da ordem *N* (como se pode ver expressado no gráfico abaixo).
 
 | ![Image of insercao](https://raw.githubusercontent.com/jadefr/ontology-testing/master/insercao.png) | 
 |:--:| 
